@@ -11,3 +11,8 @@ Classification Report:
     accuracy                           0.96      1600
    macro avg       0.92      0.89      0.90      1600
 weighted avg       0.96      0.96      0.96      1600
+
+Accuracy: 95.94 %
+Precision: 0.8649
+Recall: 0.8
+F1 Score: 0.8312

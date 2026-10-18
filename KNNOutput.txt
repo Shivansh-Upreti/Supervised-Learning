@@ -1,7 +1,7 @@
 # K-Nearest Neighbors #
 Confusion Matrix:
                 [[1368   32]
-                [ 127   73]]
+                 [ 127   73]]
 Classification Report:
               precision    recall  f1-score   support
 
@@ -11,3 +11,8 @@ Classification Report:
     accuracy                           0.90      1600
    macro avg       0.81      0.67      0.71      1600
 weighted avg       0.89      0.90      0.89      1600
+
+Accuracy: 90.06 %
+Precision: 0.6952
+Recall: 0.365
+F1 Score: 0.4787

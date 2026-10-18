@@ -2,6 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import classification_report, confusion_matrix
 
 df=pd.read_csv("waterQuality1.csv")
@@ -18,11 +19,22 @@ X_train_scaled=scaler.fit_transform(X_train)
 X_test_scaled=scaler.transform(X_test)
 
 print("# Logistic Regression #")
-lr = LogisticRegression()
+lr=LogisticRegression()
 lr.fit(X_train_scaled, y_train)
-y_pred_lr = lr.predict(X_test_scaled)
+y_pred_lr=lr.predict(X_test_scaled)
 print("Confusion Matrix:")
-print(confusion_matrix(y_test, y_pred_lr))
+print(confusion_matrix(y_test,y_pred_lr))
 print("Classification Report:")
-print(classification_report(y_test, y_pred_lr))
+print(classification_report(y_test,y_pred_lr))
 print("\n\n")
+
+print("# K-Nearest Neighbors #")
+knn=KNeighborsClassifier(n_neighbors=5)
+knn.fit(X_train_scaled,y_train)
+y_pred_knn=knn.predict(X_test_scaled)
+print("Confusion Matrix:")
+print(confusion_matrix(y_test,y_pred_knn))
+print("Classification Report:")
+print(classification_report(y_test,y_pred_knn))
+print("\n\n")
+

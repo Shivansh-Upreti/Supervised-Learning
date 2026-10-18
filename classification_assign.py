@@ -3,6 +3,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, confusion_matrix
 
 df=pd.read_csv("waterQuality1.csv")
@@ -38,3 +39,12 @@ print("Classification Report:")
 print(classification_report(y_test,y_pred_knn))
 print("\n\n")
 
+print("# Random Forest #")
+rf=RandomForestClassifier(random_state=42)
+rf.fit(X_train_scaled,y_train)
+y_pred_rf=rf.predict(X_test_scaled)
+print("Confusion Matrix:")
+print(confusion_matrix(y_test,y_pred_rf))
+print("Classification Report:")
+print(classification_report(y_test,y_pred_rf))
+print("\n\n")
